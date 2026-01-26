@@ -1,2 +1,2 @@
 # Poultry-Disease-Identification
-Poultry diseases pose a significant threat to both the health of birds and the overall production efficiency of poultry farms. Early identification of these diseases through fecal analysis is essential for implementing timely interventions. This process not only helps in maintaining flock welfare but also enhances productivity
+Poultry diseases seriously impact bird health and farm productivity. Early detection through fecal analysis is crucial for timely treatment and prevention. It supports better flock welfare, reduces losses, and improves overall production efficiency, creating a healthier and more sustainable poultry farm ecosystem.
