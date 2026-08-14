@@ -4,7 +4,7 @@ Poultry diseases pose a significant threat to both the health of birds and the o
 ## Project Preview
 
 <p align="center">
-  <img src="https://backend.krishnaik.in/media/project_banners/Gemini_Generated_Image_efrru9efrru9efrr_1_gZeP39O.jpg"
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_banners/20.png"
        alt="Project Preview"
        width="600" />
 </p>
@@ -12,7 +12,7 @@ Poultry diseases pose a significant threat to both the health of birds and the o
 ## System Architecture
 
 <p align="center">
-  <img src="https://backend.krishnaik.in/media/project_architecture_diagrams/architecture_xkL6eIz.jpg"
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_architecture_diagrams/architecture_xkL6eIz.jpg"
        alt="System Architecture"
        width="600" />
 </p>
