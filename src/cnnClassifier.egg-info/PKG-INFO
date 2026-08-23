@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: cnnClassifier
+Version: 0.0.0
+Summary: A Small Python Package for CNN app
+Home-page: https://github.com/mdzaheerjk/Poultry-Disease-Identification
+Author: mdzaheerjk
+Author-email: zaheerjkxai@gmail.com
+Project-URL: Bug Tracker, https://github.com/mdzaheerjk/Poultry-Disease-Identification/issues
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: summary
+
+# Poultry-Disease-Identification
+Poultry diseases pose a significant threat to both the health of birds and the overall production efficiency of poultry farms. Early identification of these diseases through fecal analysis is essential for implementing timely interventions. This process not only helps in maintaining flock welfare but also enhances productivity, ensuring a healthier farm ecosystem.
+
+## Project Preview
+
+<p align="center">
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_banners/20.png"
+       alt="Project Preview"
+       width="600" />
+</p>
+
+## System Architecture
+
+<p align="center">
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_architecture_diagrams/architecture_xkL6eIz.jpg"
+       alt="System Architecture"
+       width="600" />
+</p>
+

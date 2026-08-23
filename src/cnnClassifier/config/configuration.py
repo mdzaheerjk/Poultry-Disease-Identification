@@ -34,7 +34,7 @@ class ConfigurationManager:
 
         create_directories([config.root_dir])
 
-        get_prepare_base_model_config=PrepareBaseModelConfig(
+        prepare_base_model_config=PrepareBaseModelConfig(
             root_dir=Path(config.root_dir),
             base_model_path=Path(config.base_model_path),
             updated_base_model_path=Path(config.updated_base_model_path),
@@ -44,7 +44,7 @@ class ConfigurationManager:
             params_weights=self.params.WEIGHTS,
             params_classes=self.params.CLASSES  
         )
-        return get_prepare_base_model_config
+        return prepare_base_model_config
 
     def get_prepare_callback_config(self)->PrepareCallbacksConfig:
         config=self.config.prepare_callbacks

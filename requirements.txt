@@ -1,0 +1,11 @@
+tensorflow
+tensorboard
+flask
+flask-cors
+python-box
+pyyaml
+ensure
+joblib
+scipy
+types-PyYAML
+

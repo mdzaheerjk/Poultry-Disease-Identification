@@ -21,22 +21,27 @@ class Evaluation:
         valid_datagenerator=tf.keras.preprocessing.image.ImageDataGenerator(
             **datagenerator_kwargs
         )
-        self._valid_generator=valid_datagenerator.flow_from_directory(
+        self.valid_generator=valid_datagenerator.flow_from_directory(
             directory=self.config.training_data,
-            subset='Validation',
+            subset='validation',
             shuffle=False,
             **dataflow_kwargs
         )
 
-        @staticmethod
-        def load_model(path:Path)->tf.keras.Model:
-            return tf.keras.models.load_model(path)
+    @staticmethod
+    def load_model(path:Path)->tf.keras.Model:
+        model = tf.keras.models.load_model(path, compile=False)
+        model.compile(
+            loss=tf.keras.losses.CategoricalCrossentropy(),
+            metrics=['accuracy']
+        )
+        return model
 
-        def evaluation(self):
-            model=self.load_model(self.config.path_of_model)
-            self._valid_generator(),
-            self.score=model.evaluate(self.valid_generator)
+    def evaluation(self):
+        model=self.load_model(self.config.path_of_model)
+        self._valid_generator()
+        self.score=model.evaluate(self.valid_generator)
 
-        def save_score(self):
-            scores={"loss":self.score[0],'accuracy':self.score[1]}
-            save_json(path=Path('scores.json'),data=scores)
+    def save_score(self):
+        scores={"loss":self.score[0],'accuracy':self.score[1]}
+        save_json(path=Path('scores.json'),data=scores)

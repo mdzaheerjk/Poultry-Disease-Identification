@@ -2,7 +2,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/mdzaheerjk/Poultry-Disease-Identification/blob/main/data/Chicken-fecal-images.zip
+  source_URL: https://github.com/mdzaheerjk/Poultry-Disease-Identification/raw/main/data/Chicken-fecal-images.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 
@@ -19,4 +19,4 @@ prepare_callbacks:
 
 training:
   root_dir: artifacts/training
-  training_model_path: artifacts/training/model.h5
+  trained_model_path: artifacts/training/model.h5

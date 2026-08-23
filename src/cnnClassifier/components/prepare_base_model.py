@@ -15,17 +15,17 @@ class PrepareBaseModel:
             weights=self.config.params_weights,
             include_top=self.config.params_include_top
         )
-        self.save_model(Path=self.config.base_model_path,model=self.model)
+        self.save_model(path=self.config.base_model_path,model=self.model)
 
 
     @staticmethod
     def _prepare_full_model(model,classes,freeze_all,freeze_till,learning_rate):
         if freeze_all:
-            for layeer in model.layers:
-                model.trainable=False
-        elif (freeze_all is not None) and (freeze_all>0):
+            for layer in model.layers:
+                layer.trainable=False
+        elif (freeze_till is not None) and (freeze_till>0):
             for layer in model.layers[:-freeze_till]:
-                model.trainable=False
+                layer.trainable=False
 
         flatten_in=tf.keras.layers.Flatten()(model.output)
         prediction=tf.keras.layers.Dense(
@@ -55,7 +55,7 @@ class PrepareBaseModel:
             freeze_till=None,
             learning_rate=self.config.params_learning_rate
         )
-        self.save_model(path=self.config.update_base_model_path,model=self.full_model)
+        self.save_model(path=self.config.updated_base_model_path,model=self.full_model)
 
     @staticmethod
     def save_model(path:Path,model:tf.keras.Model):
