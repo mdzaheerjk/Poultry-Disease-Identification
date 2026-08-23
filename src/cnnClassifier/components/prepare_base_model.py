@@ -28,10 +28,12 @@ class PrepareBaseModel:
                 layer.trainable=False
 
         flatten_in=tf.keras.layers.Flatten()(model.output)
+        dense_1=tf.keras.layers.Dense(units=256, activation='relu')(flatten_in)
+        dropout=tf.keras.layers.Dropout(rate=0.3)(dense_1)
         prediction=tf.keras.layers.Dense(
             units=classes,
             activation='softmax',
-            )(flatten_in)
+            )(dropout)
 
         full_model=tf.keras.models.Model(
             inputs=model.input,
@@ -39,7 +41,7 @@ class PrepareBaseModel:
             )
 
         full_model.compile(
-            optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),
+            optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
             loss=tf.keras.losses.CategoricalCrossentropy(),
             metrics=['accuracy']
             )

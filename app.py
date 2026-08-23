@@ -13,8 +13,10 @@ CORS(app)
 
 class ClientApp:
     def __init__(self):
-        self.filename='inputImage.jpg'
-        self.classifier=PredictionPipeline(self.filename)
+        self.temp_dir = 'temp'
+        os.makedirs(self.temp_dir, exist_ok=True)
+        self.filename = os.path.join(self.temp_dir, 'inputImage.jpg')
+        self.classifier = PredictionPipeline(self.filename)
 
 
 clApp = ClientApp()
@@ -37,6 +39,11 @@ def predictRoute():
     image=request.json['image']
     decodeImage(image,clApp.filename)
     result=clApp.classifier.predict()
+    if os.path.exists(clApp.filename):
+        try:
+            os.remove(clApp.filename)
+        except Exception:
+            pass
     return jsonify(result)
 
 if __name__=='__main__':

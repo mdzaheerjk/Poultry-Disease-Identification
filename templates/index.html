@@ -1,234 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cnncls</title>
-	<link rel="shortcut icon"
-        href="data:image/png;base64,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" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<style>
-		body{background-color: #eff2f9;}
-		.iupload h3{color: #1b2d6b;font-size: 30px;font-weight: 700;}
-		.img-part{height:300px;width:300px;margin:0px auto;}
-		.image-part{height:300px;width:300px;border:1px solid #1b2d6b;}
-		.image-part img{position:absolute;height: 300px;width:300px;display:none;padding:5px;}
-		.image-part #video{display:block;height: 300px;width:300px;padding:5px;}
-		.res-part{border:1px solid #dedede;margin-left:20px;height: 310px;width:100%;padding:5px;margin:0px auto;overflow:auto;}
-		.res-part2{border:1px solid #dedede;height: 310px;width:100%;padding:5px;margin:0px auto;}
-		.resp-img{height: 298px;width: 233px;margin:0px auto;}
-		.jsonRes{margin-left:30px;}
-		#send{cursor:pointer;}
-		.btn-part{width:325px;}
-		textarea,
-		select,
-		.form-control,
-		.custom-select,
-		button.btn,
-		.btn-primary,
-		input[type="text"],
-		input[type="url"],
-		.uneditable-input{
-			border: 1px solid #363e75;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		textarea:focus,
-		select:focus,
-		.form-control:focus,
-		.btn:focus,
-		.btn-primary:focus,
-		.custom-select:focus,
-		input[type="text"]:focus,
-		.uneditable-input:focus{
-			border: 1px solid #007bff;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		#loading {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 9999999999;
-			overflow: hidden;
-			background: rgba(255, 255, 255, 0.7);
-		}
-		.loader {
-			border: 8px solid #f3f3f3;
-			border-top: 8px solid #363e75;
-			border-radius: 50%;
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -4em;
-			display: block;
-			animation: spin 2s linear infinite;
-		}
-		.loader,
-		.loader:after {display: block;position: absolute;top: 50%;margin-top: -4.05em;}
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-		.right-part{border:1px solid #dedede;padding:5px;}
-		.logo{position:absolute;right:0px;bottom:0px;margin-right:30px;margin-bottom:30px;}
-	</style>
+    <title>Poultry Disease Identification AI | Avian Health Diagnostics</title>
+    <meta name="description" content="AI-Powered Poultry Disease Identification and Diagnostics System for Coccidiosis Detection using Deep Learning.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        },
+                        darkbg: '#0b0f19',
+                        darkcard: '#111827',
+                        darkborder: '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .drag-active {
+            border-color: #10b981 !important;
+            background: rgba(16, 185, 129, 0.08) !important;
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.4);
+        }
+        .glow-red {
+            box-shadow: 0 0 25px -5px rgba(239, 68, 68, 0.4);
+        }
+    </style>
 </head>
-<body>
-    <div class="main container">
-		<section class="iupload">
-			<h3 class="text-center py-4">Object Classification</h3>
-			<div class="row">
-				<div class="img-part col-md-6">
-					<div class="image-part">
-						<video autoplay id="video" poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-						<img src="" id="photo">
-						<canvas style="display:none;" id="canvas"></canvas>
-					</div>
-					<div class="btn-part">
-						<form id="upload-data pt-3" class="">
-							<div class="input-group mt-3 row">
-								<button type="button" class="btn btn-primary col-md-5 col-xs-5 ml-3 mr-4" id="uload">Upload</button>
-								<button id="send" type="button" class="btn btn-success col-md-5 col-xs-5">Predict</button>
-							</div>
+<body class="text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
+    <!-- Top Navigation Header -->
+    <header class="border-b border-gray-800 bg-gray-900/60 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid fa-feather text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-heading font-extrabold text-lg sm:text-xl text-white tracking-wide flex items-center gap-2">
+                        Poultry Health <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">AI Diagnostics</span>
+                    </h1>
+                    <p class="text-xs text-gray-400">Deep Learning Avian Disease Identification System</p>
+                </div>
+            </div>
 
+            <div class="flex items-center space-x-3">
+                <button id="btnTrain" type="button" onclick="triggerTraining()" class="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-xs sm:text-sm font-medium text-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-rotate text-emerald-400"></i>
+                    <span>Retrain Model</span>
+                </button>
+                <div class="hidden sm:flex items-center space-x-2 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1.5 rounded-full text-xs text-emerald-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>CNN Model Active</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow flex flex-col justify-center">
 
+        <!-- Hero Title Section -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
+                <i class="fa-solid fa-microscope text-xs"></i> Automated Fecal Image Diagnostics
+            </span>
+            <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3">
+                Instant Disease Detection for Poultry Farms
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Upload a fecal sample image to detect <strong class="text-emerald-400 font-semibold">Coccidiosis disease</strong> instantly using our fine-tuned VGG16 Convolutional Neural Network.
+            </p>
+        </div>
 
+        <!-- Diagnostic Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Column: Upload Section (6 cols) -->
+            <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-heading font-bold text-lg text-white flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i> Sample Upload
+                    </h3>
+                    <span class="text-xs text-gray-400">PNG, JPG, JPEG</span>
+                </div>
 
-							<!-- change url value  -->
+                <!-- Hidden File Input -->
+                <input type="file" id="fileinput" accept="image/*" class="hidden">
 
+                <!-- Dropzone Box -->
+                <div id="dropzone" class="border-2 border-dashed border-gray-700 hover:border-emerald-500 rounded-2xl p-8 text-center cursor-pointer transition-all duration-300 bg-gray-900/40 hover:bg-gray-900/60 relative group">
+                    
+                    <!-- Empty State View -->
+                    <div id="uploadPrompt" class="py-6 flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-cloud-arrow-up text-emerald-400 text-2xl"></i>
+                        </div>
+                        <p class="text-base font-semibold text-white mb-1">Click anywhere or drag & drop image</p>
+                        <p class="text-xs text-gray-400 mb-5">Select clear photo of chicken fecal sample (JPG, PNG)</p>
+                        
+                        <button id="btnBrowse" type="button" class="px-5 py-2.5 rounded-xl bg-emerald-600 group-hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-lg shadow-emerald-600/20 inline-flex items-center gap-2 pointer-events-none">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Browse Local Files</span>
+                        </button>
+                    </div>
 
+                    <!-- Image Preview Container -->
+                    <div id="previewContainer" class="hidden relative rounded-xl overflow-hidden border border-gray-700 bg-black/60">
+                        <img id="photo" src="" alt="Uploaded Sample" class="max-h-72 w-full object-contain mx-auto p-2">
+                        <div class="absolute top-3 right-3 flex gap-2">
+                            <button id="btnRemove" type="button" title="Remove Image" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-semibold flex items-center gap-1 shadow-lg transition-colors">
+                                <i class="fa-solid fa-xmark text-xs"></i>
+                                <span>Remove</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Predict Trigger Button -->
+                <div class="mt-6">
+                    <button id="send" type="button" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-heading font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Run AI Analysis</span>
+                    </button>
+                </div>
+            </div>
 
-							<input type="hidden" class="form-control mr-2" id="url" placeholder="Enter REST Api url..." value="../predict"/>
-							<input name="upload" type="file" id="fileinput" style="position:absolute;top:-500px;"/><br/>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-12 right-part">
-					<h5 class="mb-2"><center>Prediction Results</center></h5>
-					<div class="row">
-						<div class="res-part2 col-md-5 col-xs-12"></div>
-						<div class="res-part col-md-5 col-xs-12"><div class="jsonRes"></div></div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
+            <!-- Right Column: Result Panel (6 cols) -->
+            <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 shadow-2xl min-h-[420px] flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-800">
+                        <h3 class="font-heading font-bold text-lg text-white flex items-center gap-2">
+                            <i class="fa-solid fa-square-poll-vertical text-emerald-400"></i> Diagnostic Results
+                        </h3>
+                        <span id="statusBadge" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-800 text-gray-400 border border-gray-700">
+                            Awaiting Input
+                        </span>
+                    </div>
 
-	<img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAMAAABBJDpuAAAAVFBMVEX/fgD/iQA7NzIyMjMnNYInNYEnNYInNYEzMzInNYQnNYETJzsnNYIwN1wxMjNoTis4O1YrNm0xOF47PE9DP0dEQEVpTVkAJJ4nNYEOLJHJbiAzMzOmmmHRAAAAFnRSTlOh/vu+986oen9fP2UqEzQkFAIDAAEEILVBJQAAA3FJREFUWMPNmO2WoyAMQG0VBARtdVRs3/89NwkgaF1rd2aOm18tIrnkgwSz7n+R7LcV1ELkeS7E7VySRlyfQXJhTiO55c+liP4cEuH1X8E7gaV+S3Jv2zYZ/Vr+/Sdx2vP6doc/fSPcf/GOpLSFVXFUW8t+giRP47TOd60yk1hbxIhSP0ACKPWrvw7YBIT/lcQY84G3Wk17ugWQfg5UsQJpjflKSLQi7xTWyk0SXTJ4VnB5D1yccxmp4Z+mX5KGNS+SPXVNll0ulyxL0wYmloBB6zL/MpCoAgjAJiUM6w0SboMwPUdRogvNKcNM3smFdRvEcJJkKcflQa+X0pNIfBGW0zKqjyQtw4VLKQlI7ZLgdrRNSZDjMQx2GB4pCkxkCrfGWUTJ0Egan6muCHgJCUwtnCk0mrJ9Q8K5LUqtdSfynkAedhynaRqngVDaXLiJEAzkFkM71IuIlWRYtSQpbXSZDvQ7JPCei9brs+oaABkn74LRIkpFaVxGnzjvIxTYREOoEwn5r01JTDRTcO87Eu3zNUeTPKZpjrIRrNIDCjzALbPk7LJMIokOEQu2K7yKQAKvFDF9pVe0R+LGb7h1MMkw2ijjA/1zhSfSphvEAChXJEhAqwYStIJWXnTpvbdH4hTUwSQ2JRmQpILDLYbB7J41SYiLcNozu5Z3JMo7RxBJahI7WSRByCMkqJt9hySESbVJcvmARJGFExJmdBSl2oM2+T4JLWfgaGFptizlPUm1FydHSdyZ7UnS4ySph2kS0kJrkvr5NJg7dnrJnfxgxPozRPGtkyPNOxtaiDvbIAF9L+5B5zTI2BwlwXmM+U3zReav3o0F8oUEFFZ42McDZYomOUziFmezgWyo251Uc1nyKJol7URCEvIYUEbHYaEGQi9C9egwCdVfHwiaajfjKMUcHcRacCylhWJbJDfq47EEDhYqoIWjHnwDXZPpPiChPQelLU+Cbm4w50FmYgkvFwpiWwCC/Um/SLcNElOC9RVj6qWpCiEMvRUK4zLpdKmPw8rVldy/qxjn60wLrVLWJIPLiZJRr3fsvnOHPvare+lB93tb37T20D82jqOt+zNuXhuNvNhp7X+PpHb3rvV9R5xjE2SpyCN9ffQO+GtWIZr5Xnytz4gTMIRYfys47/uJEXny/aQ/95tSUwmU+uRvSp/IHzQqZYpYrQmxAAAAAElFTkSuQmCC" />
+                    <!-- Initial Placeholder State -->
+                    <div id="resultEmpty" class="py-12 text-center flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-gray-800/40 border border-gray-700/50 flex items-center justify-center mb-4 text-gray-600">
+                            <i class="fa-solid fa-stethoscope text-2xl"></i>
+                        </div>
+                        <h4 class="text-gray-300 font-semibold text-sm mb-1">No Analysis Yet</h4>
+                        <p class="text-xs text-gray-500 max-w-xs">Upload a chicken fecal image and click 'Run AI Analysis' to view diagnosis details.</p>
+                    </div>
 
+                    <!-- Healthy Result Display -->
+                    <div id="resultHealthy" class="hidden space-y-6">
+                        <div class="p-5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 glow-emerald flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 text-2xl">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Diagnosis Outcome</span>
+                                <h4 class="text-2xl font-heading font-extrabold text-white mt-0.5">HEALTHY</h4>
+                                <p class="text-xs text-emerald-300/80 mt-1">No fecal abnormalities or signs of Coccidiosis detected.</p>
+                            </div>
+                        </div>
 
-<div id="loading"><div class="loader"></div></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                        <!-- Recommendations Card -->
+                        <div class="bg-gray-900/60 rounded-xl p-4 border border-gray-800">
+                            <h5 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Recommended Actions
+                            </h5>
+                            <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside">
+                                <li>Maintain standard coop sanitation and clean water supply.</li>
+                                <li>Routine monitoring of flock feed intake and behavior.</li>
+                                <li>Keep litter dry and properly ventilated.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-<script>
-var mybtn = document.getElementById('startbtn');
-var myvideo = document.getElementById('video');
-var mycanvas = document.getElementById('canvas');
-var myphoto = document.getElementById('photo');
-var base_data = "";
+                    <!-- Coccidiosis Detected Result Display -->
+                    <div id="resultDiseased" class="hidden space-y-6">
+                        <div class="p-5 rounded-xl bg-rose-950/40 border border-rose-500/30 glow-red flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 shrink-0 text-2xl">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Diagnosis Outcome</span>
+                                <h4 class="text-2xl font-heading font-extrabold text-white mt-0.5">COCCIDIOSIS DETECTED</h4>
+                                <p class="text-xs text-rose-300/80 mt-1">Fecal sample indicates characteristics of Coccidial infection.</p>
+                            </div>
+                        </div>
 
-function sendRequest(base64Data){
-	var type = "json";
-	if(base64Data != "" || base64Data != null){
-		if(type == "imgtobase"){
-			$(".res-part").html("");
-			$(".res-part").html(base64Data);
-		}
-		else if(type == "basetoimg"){
-			var imageData = $("#imgstring").val();
-			$(".res-part").html("");
-			$(".res-part").append("<img src='data:image/jpeg;base64," + imageData + "' alt='' />");
-		}
-		else{
-			var url = $("#url").val();
-			$("#loading").show();
-			$.ajax({
-				url : url,
-				type: "post",
-				cache: false,
-				async: true,
-				crossDomain: true,
-				headers: {
-					'Content-Type': 'application/json',
-					'Access-Control-Allow-Origin':'*'
-				},
-				data:JSON.stringify({image:base64Data}),
-				success: function(res){
-					$(".res-part").html("");
-					$(".res-part2").html("");
-					try{
-						var imageData = res[1].image;
-						if(imageData.length > 100){
-							if(imageData.length > 10){$(".res-part2").append("<img class='resp-img' src='data:image/jpeg;base64," + imageData + "' alt='' />");}
-						}
-					}catch(e){}
-					$(".res-part").html("<pre>" + JSON.stringify(res[0], undefined, 2) + "</pre>");
-					$("#loading").hide();
-				}
-			});
-		}
-	}
-}
+                        <!-- Recommendations Card -->
+                        <div class="bg-gray-900/60 rounded-xl p-4 border border-gray-800">
+                            <h5 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2 flex items-center gap-1.5 text-rose-400">
+                                <i class="fa-solid fa-notes-medical"></i> Immediate Action Plan
+                            </h5>
+                            <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside">
+                                <li>Isolate symptomatic birds to prevent spread across flock.</li>
+                                <li>Consult veterinarian for anticoccidial medication (e.g. Amprolium).</li>
+                                <li>Thoroughly sanitize coop litter and drinking troughs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-$(document).ready(function(){
-	$("#loading").hide();
+                <!-- Footer Metrics Bar -->
+                <div class="mt-6 pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-500">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-brain text-emerald-500"></i> VGG16 CNN</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-bolt text-amber-500"></i> Fast Inference</span>
+                </div>
+            </div>
 
-	$('#send').click(function(evt){
-		sendRequest(base_data);
-    });
+        </div>
 
-    $('#uload').click(function(evt) {
-        $('#fileinput').focus().trigger('click');
-    });
-	$("#fileinput").change(function(){
-		if (this.files && this.files[0]){
-			var reader = new FileReader();
-			reader.onload = function (e){
-				var url = e.target.result;
-				var img = new Image();
-				img.crossOrigin = 'Anonymous';
-				img.onload = function(){
-					var canvas = document.createElement('CANVAS');
-					var ctx = canvas.getContext('2d');
-					canvas.height = this.height;
-					canvas.width = this.width;
-					ctx.drawImage(this, 0, 0);
-					base_data = canvas.toDataURL('image/jpeg', 1.0).replace(/^data:image.+;base64,/, '');
-					canvas = null;
-				};
-				img.src = url;
-				$('#photo').attr('src', url);
-				$('#photo').show();
-				$('#video').hide();
-			}
-			reader.readAsDataURL(this.files[0]);
-		}
-	});
-});
+    </main>
 
-</script>
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-gray-950 py-4 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>© 2026 Poultry Disease Identification AI • Deep Learning Diagnostics System</p>
+            <p class="text-gray-600">Built with Flask & TensorFlow</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay Modal -->
+    <div id="loading" class="fixed inset-0 bg-gray-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden">
+        <div class="glass-card p-8 rounded-2xl text-center max-w-sm mx-4 border border-gray-800 shadow-2xl flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-emerald-500/20 border-t-emerald-400 rounded-full animate-spin mb-4"></div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1" id="loadingTitle">Analyzing Sample...</h4>
+            <p class="text-xs text-gray-400" id="loadingSubtitle">Evaluating neural network features for disease indicators</p>
+        </div>
+    </div>
+
+    <!-- Hidden standard inputs for API compatibility -->
+    <input type="hidden" id="url" value="/predict"/>
+
+    <!-- JavaScript logic -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let base_data = "";
+
+        $(document).ready(function() {
+            const dropzone = $('#dropzone');
+            const fileinput = $('#fileinput');
+
+            // Prevent event bubbling loop when fileinput is clicked
+            fileinput.on('click', function(e) {
+                e.stopPropagation();
+            });
+
+            // Click anywhere inside dropzone box opens file picker
+            dropzone.on('click', function(e) {
+                if (e.target.id === 'btnRemove' || $(e.target).closest('#btnRemove').length) return;
+                fileinput.trigger('click');
+            });
+
+            // Drag and Drop styling & functionality
+            dropzone.on('dragover dragenter', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropzone.addClass('border-emerald-500').addClass('bg-emerald-950/20');
+            });
+
+            dropzone.on('dragleave dragend drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropzone.removeClass('border-emerald-500').removeClass('bg-emerald-950/20');
+            });
+
+            dropzone.on('drop', function(e) {
+                const files = e.originalEvent.dataTransfer.files;
+                if (files && files.length > 0) {
+                    fileinput[0].files = files;
+                    handleFileSelect(files[0]);
+                }
+            });
+
+            fileinput.on('change', function() {
+                if (this.files && this.files[0]) {
+                    handleFileSelect(this.files[0]);
+                }
+            });
+
+            $('#btnRemove').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                resetUpload();
+            });
+
+            $('#send').on('click', function() {
+                if (!base_data) {
+                    alert("Please upload a sample image first.");
+                    return;
+                }
+                runPrediction(base_data);
+            });
+        });
+
+        function handleFileSelect(file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.crossOrigin = 'Anonymous';
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.height = this.height;
+                    canvas.width = this.width;
+                    ctx.drawImage(this, 0, 0);
+                    base_data = canvas.toDataURL('image/jpeg', 1.0).replace(/^data:image.+;base64,/, '');
+                };
+                img.src = e.target.result;
+                $('#photo').attr('src', e.target.result);
+                $('#uploadPrompt').addClass('hidden');
+                $('#previewContainer').removeClass('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function resetUpload() {
+            base_data = "";
+            $('#fileinput').val('');
+            $('#photo').attr('src', '');
+            $('#previewContainer').addClass('hidden');
+            $('#uploadPrompt').removeClass('hidden');
+            
+            // Reset Results
+            $('#resultEmpty').removeClass('hidden');
+            $('#resultHealthy').addClass('hidden');
+            $('#resultDiseased').addClass('hidden');
+            $('#statusBadge').html('Awaiting Input').attr('class', 'px-3 py-1 rounded-full text-xs font-semibold bg-gray-800 text-gray-400 border border-gray-700');
+        }
+
+        function showLoading(title, subtitle) {
+            $('#loadingTitle').text(title || 'Analyzing Sample...');
+            $('#loadingSubtitle').text(subtitle || 'Evaluating neural network features...');
+            $('#loading').removeClass('hidden');
+        }
+
+        function hideLoading() {
+            $('#loading').addClass('hidden');
+        }
+
+        function runPrediction(base64Data) {
+            showLoading("Running Diagnostics...", "Processing image through CNN classification model...");
+            
+            $.ajax({
+                url: "/predict",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ image: base64Data }),
+                success: function(res) {
+                    hideLoading();
+                    if (!res || !res.length) {
+                        alert("Invalid response from prediction server.");
+                        return;
+                    }
+
+                    const outcome = res[0].image;
+                    $('#resultEmpty').addClass('hidden');
+
+                    if (outcome === "Healthy") {
+                        $('#resultHealthy').removeClass('hidden');
+                        $('#resultDiseased').addClass('hidden');
+                        $('#statusBadge').html('<i class="fa-solid fa-check-circle mr-1"></i> Healthy').attr('class', 'px-3 py-1 rounded-full text-xs font-semibold bg-emerald-900/60 text-emerald-400 border border-emerald-700');
+                    } else {
+                        $('#resultHealthy').addClass('hidden');
+                        $('#resultDiseased').removeClass('hidden');
+                        $('#statusBadge').html('<i class="fa-solid fa-triangle-exclamation mr-1"></i> Coccidiosis Detected').attr('class', 'px-3 py-1 rounded-full text-xs font-semibold bg-rose-900/60 text-rose-400 border border-rose-700');
+                    }
+                },
+                error: function(err) {
+                    hideLoading();
+                    alert("Error running prediction: " + (err.responseJSON ? err.responseJSON.error : err.statusText));
+                }
+            });
+        }
+
+        function triggerTraining() {
+            if (!confirm("Are you sure you want to trigger model re-training? This may take a few moments.")) return;
+            
+            showLoading("Training Pipeline Running...", "Executing model training across poultry dataset...");
+            $.ajax({
+                url: "/train",
+                type: "POST",
+                success: function(res) {
+                    hideLoading();
+                    alert("Training Pipeline Completed Successfully: " + res);
+                },
+                error: function(err) {
+                    hideLoading();
+                    alert("Training error: " + err.statusText);
+                }
+            });
+        }
+    </script>
 </body>
 </html>

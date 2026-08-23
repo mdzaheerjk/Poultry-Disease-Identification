@@ -1,0 +1,26 @@
+# Temporary and Uploaded Files
+temp/
+*.tmp
+inputImage.jpg
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs & Artifacts
+logs/
+artifacts/
+*.log
+*.h5
+*.keras
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
